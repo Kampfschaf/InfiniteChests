@@ -19,7 +19,7 @@ using TShockAPI.DB;
 
 namespace InfiniteChests
 {
-	[ApiVersion(1, 17)]
+	[ApiVersion(1, 19)]
 	public class InfiniteChests : TerrariaPlugin
 	{
 		private IDbConnection Database;
@@ -29,7 +29,7 @@ namespace InfiniteChests
 
 		public override string Author
 		{
-			get { return "MarioE"; }
+			get { return "MarioE, PlayKampfschaf"; }
 		}
 		public override string Description
 		{
@@ -333,7 +333,7 @@ namespace InfiniteChests
 			if (converted > 0)
 			{
 				TSPlayer.Server.SendSuccessMessage("[InfiniteChests] Converted {0} chest{1}.", converted, converted == 1 ? "" : "s");
-				WorldFile.saveWorld();
+                Terraria.IO.WorldFile.saveWorld();
 			}
 		}
 
@@ -810,7 +810,7 @@ namespace InfiniteChests
 
 				e.Player.SendSuccessMessage("Converted {0} chest{1}.", converted, converted == 1 ? "" : "s");
 				if (converted > 0)
-					WorldFile.saveWorld();
+					Terraria.IO.WorldFile.saveWorld();
 			}).LogExceptions();
 		}
 		void Deselect(CommandArgs e)
@@ -914,7 +914,7 @@ namespace InfiniteChests
 
 					e.Player.SendSuccessMessage("Pruned {0} corrupted chest{1}.", corrupted, corrupted == 1 ? "" : "s");
 					if (corrupted + empty > 0)
-						WorldFile.saveWorld();
+                        Terraria.IO.WorldFile.saveWorld();
 				}).LogExceptions();
 		}
 		void Refill(CommandArgs e)
@@ -996,7 +996,7 @@ namespace InfiniteChests
 				Database.Query("DELETE FROM Chests WHERE WorldID = @0", Main.worldID);
 				e.Player.SendSuccessMessage("Reverse converted {0} chests.", i);
 				if (i > 0)
-					WorldFile.saveWorld();
+                    Terraria.IO.WorldFile.saveWorld();
 			}).LogExceptions();
 		}
 		void Unlock(CommandArgs e)

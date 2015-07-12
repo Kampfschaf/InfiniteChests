@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InfiniteChests</RootNamespace>
-    <AssemblyName>InfiniteChests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>InfiniteChests2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,17 +21,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Multi-Use|AnyCPU'">
     <OutputPath>bin\</OutputPath>
@@ -41,25 +43,22 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Data.Sqlite">
-      <HintPath>..\References\Mono.Data.Sqlite.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Terraria\ServerPlugins\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\References\MySql.Data.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Terraria\ServerPlugins\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="TerrariaServer">
-      <HintPath>..\References\TerrariaServer.exe</HintPath>
-      <Private>False</Private>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Terraria\TerrariaServer.exe</HintPath>
     </Reference>
     <Reference Include="TShockAPI">
-      <HintPath>..\References\TShockAPI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Terraria\ServerPlugins\TShockAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
